@@ -4,7 +4,6 @@
         @include('livewire.component.info')
     </div>
     <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
-        @include('livewire.component.listar')
         @include('livewire.component.form')
     </div>
   </div>

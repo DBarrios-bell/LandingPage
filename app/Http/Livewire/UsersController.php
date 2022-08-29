@@ -15,26 +15,16 @@ class UsersController extends Component
 
     public function render()
     {
-        $userall = User::all();
-        $contador = $userall->count();
-        $ganador = User::select()->inRandomOrder()->limit(1)->get();
         $departamentos = Departament::all();
-
-        $usuarios = User::join('cities as c','c.id','users.id_ciudad')
-        ->join('departaments as d','d.id_departamento','users.id_departamento')
-        ->select('users.*','d.departamento as departamento','c.ciudad as ciudad')->get();
 
         return view('livewire.users',[
             'departaments' => $departamentos,
-            'users' => $usuarios,
-            'winner'=> $ganador,
-            'count'=> $contador
             ])->extends('layouts.app')->section('content');
     }
 
-    public function updateddepartamento($departamento_id)
+    public function updateddepartamento($id)
     {
-        $this->ciudades = City::where('departamento_id', $departamento_id)->get();
+        $this->ciudades = City::where('id_departamento', $id)->get();
     }
 
     public function store()

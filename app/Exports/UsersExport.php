@@ -30,10 +30,9 @@ class UsersExport implements FromCollection,WithHeadings
     public function collection()
     {
         $users = ModelsUser::join('cities as c','c.id','users.id_ciudad')
-        ->join('departaments as d','d.id_departamento','users.id_departamento')
+        ->join('departaments as d','d.id','users.id_departamento')
         ->select('users.id','users.created_at','users.nombre','users.apellido','users.cedula','d.departamento','c.ciudad','users.celular','users.correo')->get();
-        //  $users = DB::table('Users')->select('id','name', 'email')->get();
-         return $users;
+        return $users;
 
     }
 }

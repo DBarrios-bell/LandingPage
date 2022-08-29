@@ -2,9 +2,6 @@
     <div class="row justify-content-center">
         <div class="card-header d-grid gap-2 d-md-flex justify-content-md-end">
             <h3>{{ __('Datos Personales') }}
-                <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#listar">
-                    Ver Usuario registrados
-                </button>
         </div>
         <div class="card-body">
             @if (session('status'))
@@ -65,7 +62,7 @@
                         class="form-control @error('departamento') is-invalid @enderror" required autofocus>
                         <option value="">::Seleccione::</option>
                         @foreach ($departaments as $d)
-                            <option value="{{ $d->id_departamento }}">{{ $d->departamento }}</option>
+                            <option value="{{ $d->id }}">{{ $d->departamento }}</option>
                         @endforeach
                     </select>
 

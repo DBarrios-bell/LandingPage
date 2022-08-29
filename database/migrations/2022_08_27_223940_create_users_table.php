@@ -18,9 +18,9 @@ class CreateUsersTable extends Migration
             $table->string('nombre');
             $table->string('apellido');
             $table->integer('cedula')->unique();
-            $table->integer('id_departamento');
+            $table->unsignedBigInteger('id_departamento');
             $table->foreign('id_departamento')->references('id')->on('departaments');
-            $table->integer('id_ciudad');
+            $table->unsignedBigInteger('id_ciudad');
             $table->foreign('id_ciudad')->references('id')->on('cities');
             $table->string('celular');
             $table->string('correo')->unique();

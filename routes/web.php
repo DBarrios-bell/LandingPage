@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\ExportController;
+use App\Http\Livewire\AdministratorsController;
 use App\Http\Livewire\UsersController;
+use App\Http\Livewire\WinnersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,5 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', UsersController::class)->name('user');
+Route::get('/', WinnersController::class)->name('ganador');
+Route::get('/registro', UsersController::class)->name('user');
+Route::get('/administrador', AdministratorsController::class)->name('admin');
 Route::get('/exportar', [ExportController::class, 'export'])->name('exportar');
