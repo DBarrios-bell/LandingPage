@@ -132,7 +132,8 @@
                     <input id="defaultCheck1" type="checkbox" wire:model.lazy="habeasdata"
                         class="form-check-input @error('habeasdata') is-invalid @enderror">“Autorizo el tratamiento de
                     mis datos de acuerdo con lafinalidad establecida en la política de protección de datos
-                    personales”.<a href="" style="text-decoration: none" data-bs-toggle="modal" data-bs-target="#exampleModal">clic aqui</a>
+                    personales”.<a href="" style="text-decoration: none" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">clic aqui</a>
 
                     @error('habeasdata')
                         <span class="invalid-feedback" role="alert">
@@ -143,10 +144,10 @@
             </div>
             <div class="row mb-1">
                 <div class="col-md-6 offset-md-4">
-                    <button type="button" wire:click.prevent="store()"
-                        class="btn btn-outline-success">Guardar</button>
+                    <button type="button" wire:click.prevent="store()" class="btn btn-outline-success">Guardar</button>
                     @if (!is_null($winners))
-                        <a href="{{route('ganador')}}" type="button" class="btn btn-outline-warning">ver Ganador</a>
+                        <a href="{{ route('ganador') }}" type="button" class="btn btn-outline-warning">ver
+                            Ganador</a>
                     @endif
                 </div>
             </div>

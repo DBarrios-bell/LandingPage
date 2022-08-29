@@ -1,8 +1,11 @@
 <div class="container p-4">
     @if ($winner == null && $count >= 5)
-    <button type="button" wire:click.prevent="update()" class="btn btn-outline-success">Soltear Premio</button>
+        <button type="button" wire:click.prevent="update()" class="btn btn-outline-success">Soltear Premio</button>
     @endif
-    <a href="{{route('exportar')}}" type="button" class="btn btn-outline-secondary">Exportar Excel</a>
+    @if (!is_null($winner))
+        <a href="{{ route('ganador') }}" type="button" class="btn btn-outline-warning">ver Ganador</a>
+    @endif
+    <a href="{{ route('exportar') }}" type="button" class="btn btn-outline-secondary">Exportar Excel</a>
     <br><br>
     <table class="table table-striped table-hover">
         <thead>

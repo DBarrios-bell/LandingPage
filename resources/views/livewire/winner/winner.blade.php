@@ -25,7 +25,7 @@
             <div class="col-md-8">
                 <div class="card-body">
                     @foreach ($wins as $w)
-                        <h5 class="card-title">{{ $w->nombre . ' - ' . $w->cedula }}</h5>
+                        <h6 class="card-title">{{ $w->nombre . ' '. $w->apellido . ' - ' . $w->cedula }}</h6>
                         <p class="card-text">Felicidades, has sido el ganador de este concurso.</p>
                         <small class="text-muted">Fecha Registro: {{ $w->created_at }}</small>
                         <small class="text-muted">Departamento: {{ $w->departamento }}</small>
