@@ -4,7 +4,7 @@
     @endif
     <a href="{{route('exportar')}}" type="button" class="btn btn-outline-secondary">Exportar Excel</a>
     <br><br>
-    <table class="table">
+    <table class="table table-striped table-hover">
         <thead>
             <tr>
                 <th scope="col">#</th>
