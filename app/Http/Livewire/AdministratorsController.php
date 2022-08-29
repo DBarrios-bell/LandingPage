@@ -11,7 +11,7 @@ class AdministratorsController extends Component
     {
         $userall = User::all();
         $contador = $userall->count();
-         $winner = User::where('winner','1')->get();
+        $winner = User::where('winner','1')->first();
         $usuarios = User::join('cities as c','c.id','users.id_ciudad')
         ->join('departaments as d','d.id','users.id_departamento')
         ->select('users.*','d.departamento as departamento','c.ciudad as ciudad')->get();

@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-login">
         <div class="modal-content">
             <div class="modal-header text-center">
-                @if ($winners = null)
+                @if ($winners == null)
                     <h4 class="modal-title">Bienvenido</h4>
                 @else
                     <h4 class="modal-title">Tenemos un Ganador</h4>

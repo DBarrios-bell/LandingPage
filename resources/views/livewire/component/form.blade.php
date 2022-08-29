@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row justify-content-center">
-        <div class="card-header d-grid gap-2 d-md-flex justify-content-md-end">
+        <div class="card-header d-grid gap-2 d-md-flex justify-content-md-start">
             <h3>{{ __('Datos Personales') }}
         </div>
         <div class="card-body">
@@ -132,7 +132,7 @@
                     <input id="defaultCheck1" type="checkbox" wire:model.lazy="habeasdata"
                         class="form-check-input @error('habeasdata') is-invalid @enderror">“Autorizo el tratamiento de
                     mis datos de acuerdo con lafinalidad establecida en la política de protección de datos
-                    personales”.<a href="" style="text-decoration: none">clic aqui</a>
+                    personales”.<a href="" style="text-decoration: none" data-bs-toggle="modal" data-bs-target="#exampleModal">clic aqui</a>
 
                     @error('habeasdata')
                         <span class="invalid-feedback" role="alert">
@@ -141,10 +141,13 @@
                     @enderror
                 </div>
             </div>
-            <div class="row mb-0">
+            <div class="row mb-1">
                 <div class="col-md-6 offset-md-4">
                     <button type="button" wire:click.prevent="store()"
-                        class="btn btn-dark close-modal">Guardar</button>
+                        class="btn btn-outline-success">Guardar</button>
+                    @if (!is_null($winners))
+                        <a href="{{route('ganador')}}" type="button" class="btn btn-outline-warning">ver Ganador</a>
+                    @endif
                 </div>
             </div>
 
@@ -152,3 +155,6 @@
 
     </div>
 </div>
+
+
+@include('livewire.component.politica')

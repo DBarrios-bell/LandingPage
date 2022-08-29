@@ -16,9 +16,11 @@ class UsersController extends Component
     public function render()
     {
         $departamentos = Departament::all();
+        $winner = User::where('winner','1')->first();
 
         return view('livewire.users',[
             'departaments' => $departamentos,
+            'winners' => $winner
             ])->extends('layouts.app')->section('content');
     }
 
