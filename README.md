@@ -1,4 +1,4 @@
-## Landindg Page
+## Landing Page
 
 Es una plataforma la cual consta de un concurso donde se registran los clientes de la marca y cuando se hayan registrado minimo 5 clientes el sistema habilite el boton para elegir ganador al azar en la parte del administrador.
 una vez se elija el ganador el sistema mostrara una modal indicando quien fue el ganador de este concurso 
